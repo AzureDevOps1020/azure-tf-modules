@@ -13,14 +13,14 @@ resource "random_password" "admin_password" {
 
 # Calling the Resource Group Module
 module "resource_group" {
-  source              = "../modules/azurerm_resource_group" # Update this path if needed
+  source              = "./modules/azurerm_resource_group" # Update this path if needed
   resource_group_name = var.resource_group_name
   location            = var.location
 }
 
 # Calling the Virtual Network Module
 module "virtual_network" {
-  source                = "modules/azurerm_virtual_network" # Update this path if needed
+  source                = "./modules/azurerm_virtual_network" # Update this path if needed
   vnet_name             = var.vnet_name
   address_space         = var.address_space
   location              = var.location
@@ -29,7 +29,7 @@ module "virtual_network" {
 
 # Calling the Subnet Module
 module "subnet" {
-  source                = "modules/azurerm_subnet" # Update this path if needed
+  source                = "./modules/azurerm_subnet" # Update this path if needed
   subnet_name           = var.subnet_name
   address_prefixes      = var.address_prefixes
   virtual_network_name  = module.virtual_network.vnet_name
@@ -38,7 +38,7 @@ module "subnet" {
 
 # Calling the Network Security Group Module
 module "network_security_group" {
-  source                = "modules/azurerm_network_security_group" # Update this path if needed
+  source                = "./modules/azurerm_network_security_group" # Update this path if needed
   nsg_name              = var.nsg_name
   location              = var.location
   resource_group_name   = module.resource_group.resource_group_name
@@ -46,7 +46,7 @@ module "network_security_group" {
 
 # Calling the Virtual Machine Module
 module "virtual_machine" {
-  source               = "modules/azure_virtual_machine" # Update this path if needed
+  source               = "./modules/azure_virtual_machine" # Update this path if needed
   vm_name              = var.vm_name
   resource_group_name  = module.resource_group.resource_group_name
   location             = var.location
