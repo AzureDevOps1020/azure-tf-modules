@@ -2,67 +2,95 @@
 
 ## Here is a list of Azure resources for which you can create Terraform modules:
 
-1. azurerm_resource_group
-```
-Description: A resource group is a container that holds related Azure resources for an Azure solution. It is a logical grouping for resources in Azure.
-```
-2. azurerm_virtual_network
-```
-Description: A virtual network (VNet) is the fundamental building block for your private network in Azure. It allows many types of Azure resources to securely communicate with each other, the internet, and on-premises networks.
-```
-3. azurerm_subnet
-```
-Description: A subnet is a range of IP addresses in your virtual network. You can segment your virtual network into subnets for better traffic management and security.
-```
-4. azurerm_network_security_group
-```
-Description: Network Security Groups (NSG) contain security rules that allow or deny inbound and outbound network traffic to and from resources in your virtual network.
-```
-5. azurerm_network_security_rule
-```
-Description: A security rule within a Network Security Group defines how traffic is allowed or denied for a given NSG. You can create multiple security rules to enforce granular traffic control.
-```
+001. **azurerm_resource_group**
+*Description:* A resource group is a container that holds related Azure resources for an Azure solution. It is a logical grouping for resources in Azure.
 
-6. azurerm_public_ip
-```
-Description: A public IP address allows Azure resources to communicate with the internet and other Azure resources outside your VNet.
-```
-7. azurerm_virtual_network_peering
-```
-Description: Virtual Network Peering connects two Azure virtual networks and allows traffic to flow between them privately.
-```
-8. azurerm_network_interface
-```
-Description: A network interface (NIC) is a connection point for a virtual machine (VM) to communicate with a VNet. It contains one or more IP configurations.
-```
-9. azurerm_storage_account
-```
-Description: A Storage Account in Azure provides highly available and secure storage for a wide variety of data objects, including blobs, files, queues, and tables.
-```
-10. azurerm_managed_disk
-```
-Description: Managed Disks are highly durable, scalable, and secure disks for use with Azure Virtual Machines (VMs). They provide persistent storage for VMs.
-```
-11. azurerm_snapshot
-12. azurerm_backup_protected_vm
-13. azurerm_storage_blob
-14. azurerm_storage_container
-15. azurerm_virtual_machine
-16. azurerm_virtual_machine_scale_set
-17. azurerm_availability_set
-18. azurerm_image
-19. azurerm_virtual_machine_extension
-20. azurerm_dns_zone
-21. azurerm_dns_a_record
-22. azurerm_dns_cname_record
-23. azurerm_key_vault
-24. azurerm_key_vault_access_policy
-25. azurerm_key_vault_key
-26. azurerm_key_vault_secret
-27. azurerm_key_vault_certificate
-28. azurerm_application_gateway
-29. azurerm_lb
-30. azurerm_lb_rule
+002. **azurerm_virtual_network**
+*Description:* A virtual network (VNet) is the fundamental building block for your private network in Azure. It allows many types of Azure resources to securely communicate with each other, the internet, and on-premises networks.
+
+003. **azurerm_subnet**
+*Description:* A subnet is a range of IP addresses in your virtual network. You can segment your virtual network into subnets for better traffic management and security.
+
+004. **azurerm_network_security_group**
+*Description:* Network Security Groups (NSG) contain security rules that allow or deny inbound and outbound network traffic to and from resources in your virtual network.
+
+005. **azurerm_network_security_rule**
+*Description:* A security rule within a Network Security Group defines how traffic is allowed or denied for a given NSG. You can create multiple security rules to enforce granular traffic control.
+
+006. **azurerm_public_ip**
+*Description:* A public IP address allows Azure resources to communicate with the internet and other Azure resources outside your VNet.
+
+007. **azurerm_virtual_network_peering**
+*Description:* Virtual Network Peering connects two Azure virtual networks and allows traffic to flow between them privately.
+
+008. **azurerm_network_interface**
+*Description:* A network interface (NIC) is a connection point for a virtual machine (VM) to communicate with a VNet. It contains one or more IP configurations.
+
+009. **azurerm_storage_account**
+*Description:* A Storage Account in Azure provides highly available and secure storage for a wide variety of data objects, including blobs, files, queues, and tables.
+
+010. **azurerm_managed_disk**
+*Description:* Managed Disks are highly durable, scalable, and secure disks for use with Azure Virtual Machines (VMs). They provide persistent storage for VMs.
+
+011. **azurerm_snapshot**  
+*Description:* An Azure Snapshot is a point-in-time backup of a managed disk. You can use snapshots to restore disks, create new VMs, or maintain backups for disaster recovery.
+
+012. **azurerm_backup_protected_vm**  
+*Description:* This resource manages a virtual machine that is protected by Azure Backup, offering backup and restore services to maintain data integrity and availability in case of failures.
+
+013. **azurerm_storage_blob**  
+*Description:* A Storage Blob is an object storage service that stores unstructured data like text, binary data, images, and videos. It is commonly used for large-scale data storage.
+
+014. **azurerm_storage_container**  
+*Description:* Storage Containers organize blobs within a storage account. Containers serve as a logical grouping for blob data, making it easier to manage large datasets.
+
+015. **azurerm_virtual_machine**  
+*Description:* Azure Virtual Machines (VMs) provide on-demand computing resources in the cloud. They support a wide range of workloads, including development, testing, applications, and services.
+
+016. **azurerm_virtual_machine_scale_set**  
+*Description:* Virtual Machine Scale Sets allow you to deploy and manage a set of identical VMs, providing high availability and autoscaling for large-scale applications.
+
+017. **azurerm_availability_set**  
+*Description:* Availability Sets ensure that VMs deployed within them are distributed across multiple physical servers, reducing the risk of outages due to server failures.
+
+018. **azurerm_image**  
+*Description:* This resource manages custom VM images that can be used to quickly deploy pre-configured virtual machines in Azure.
+
+019. **azurerm_virtual_machine_extension**  
+*Description:* Virtual Machine Extensions are small applications that provide post-deployment configuration and automation tasks, such as installing software or managing configuration.
+
+020. **azurerm_dns_zone**  
+*Description:* A DNS Zone represents a portion of the DNS namespace and allows you to manage DNS records for your domain, facilitating resource access through easy-to-remember URLs.
+
+021. **azurerm_dns_a_record**  
+*Description:* An A Record maps a domain or subdomain to an IP address, enabling network resources to be accessed using domain names rather than IP addresses.
+
+022. **azurerm_dns_cname_record**  
+*Description:* A CNAME Record maps a domain name to another domain name, simplifying the management of multiple DNS names for a single resource.
+
+023. **azurerm_key_vault**  
+*Description:* Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services, providing a secure storage solution for sensitive data.
+
+024. **azurerm_key_vault_access_policy**  
+*Description:* This resource defines access policies for Azure Key Vault, determining which users, groups, or applications can access and manage keys, secrets, and certificates.
+
+025. **azurerm_key_vault_key**  
+*Description:* Azure Key Vault Keys are used to manage encryption keys for securing data, and they are used in cryptographic operations like key wrapping and decryption.
+
+026. **azurerm_key_vault_secret**  
+*Description:* Azure Key Vault Secrets securely store and manage sensitive information such as passwords, connection strings, and API keys.
+
+027. **azurerm_key_vault_certificate**  
+*Description:* This resource manages SSL/TLS certificates in Azure Key Vault, allowing easy deployment and renewal of certificates for secure web applications and services.
+
+028. **azurerm_application_gateway**  
+*Description:* Azure Application Gateway is a load balancer that manages HTTP(S) traffic, optimizing the delivery of web content and protecting applications through a Web Application Firewall (WAF).
+
+029. **azurerm_lb**  
+*Description:* Azure Load Balancer (LB) distributes inbound traffic to multiple servers, providing high availability and scalability for applications and services.
+
+030. **azurerm_lb_rule**  
+*Description:* This resource defines how traffic is distributed by an Azure Load Balancer, specifying which ports and IP addresses are used for inbound traffic.
 31. azurerm_lb_backend_address_pool
 32. azurerm_lb_nat_pool
 33. azurerm_redis_cache
