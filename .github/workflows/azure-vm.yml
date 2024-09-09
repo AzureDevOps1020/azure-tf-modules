@@ -1,6 +1,5 @@
 name: 'Terraform Deploy'
 
-# Manual trigger with inputs
 on:
   workflow_dispatch:
     inputs:
@@ -11,30 +10,24 @@ on:
         type: choice
         options:
           - dev
-          - prod
-      destroy:
-        description: 'Choose if you want to destroy resources'
-        required: false
-        default: 'false'
-        type: boolean
 
 jobs:
   terraform:
     name: 'Deploy Infrastructure'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # # Azure Login using secrets
-    # - name: Azure Login
-    #   uses: azure/login@v1
-    #   with:
-    #     AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-    #     AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-    #     AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-    #     AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    # Azure Login using service principal
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
@@ -42,22 +35,8 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    # Conditional step to either apply or destroy resources
-    - name: Terraform Plan or Destroy
-      run: |
-        if [[ "${{ github.event.inputs.destroy }}" == "true" ]]; then
-          terraform plan -destroy -var-file="env-${{ github.event.inputs.environment }}.tfvars"
-        else
-          terraform plan -var-file="env-${{ github.event.inputs.environment }}.tfvars"
-    
-    - name: Terraform Apply or Destroy
-      run: |
-        if [[ "${{ github.event.inputs.destroy }}" == "true" ]]; then
-          terraform destroy -auto-approve -var-file="env-${{ github.event.inputs.environment }}.tfvars"
-        else
-          terraform apply -auto-approve -var-file="env-${{ github.event.inputs.environment }}.tfvars"
+    - name: Terraform Plan
+      run: terraform plan -var-file="dev.tfvars"
 
-    # Show generated admin password output securely
-    - name: Show Generated Admin Password
-      if: github.event.inputs.destroy == 'false'
-      run: terraform output admin_password
+    - name: Terraform Apply
+      run: terraform apply -auto-approve -var-file="dev.tfvars"
