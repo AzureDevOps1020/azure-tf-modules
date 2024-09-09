@@ -7,14 +7,38 @@
 Description: A resource group is a container that holds related Azure resources for an Azure solution. It is a logical grouping for resources in Azure.
 ```
 2. azurerm_virtual_network
+```
+Description: A virtual network (VNet) is the fundamental building block for your private network in Azure. It allows many types of Azure resources to securely communicate with each other, the internet, and on-premises networks.
+```
 3. azurerm_subnet
+```
+Description: A subnet is a range of IP addresses in your virtual network. You can segment your virtual network into subnets for better traffic management and security.
+```
 4. azurerm_network_security_group
+```
+Description: Network Security Groups (NSG) contain security rules that allow or deny inbound and outbound network traffic to and from resources in your virtual network.
+```
 5. azurerm_network_security_rule
+```
+Description: A security rule within a Network Security Group defines how traffic is allowed or denied for a given NSG. You can create multiple security rules to enforce granular traffic control.
+```
+
 6. azurerm_public_ip
+```
+Description: A public IP address allows Azure resources to communicate with the internet and other Azure resources outside your VNet.
+```
 7. azurerm_virtual_network_peering
+```Description: Virtual Network Peering connects two Azure virtual networks and allows traffic to flow between them privately.
+```
 8. azurerm_network_interface
+```Description: A network interface (NIC) is a connection point for a virtual machine (VM) to communicate with a VNet. It contains one or more IP configurations.
+```
 9. azurerm_storage_account
+```Description: A Storage Account in Azure provides highly available and secure storage for a wide variety of data objects, including blobs, files, queues, and tables.
+```
 10. azurerm_managed_disk
+```Description: Managed Disks are highly durable, scalable, and secure disks for use with Azure Virtual Machines (VMs). They provide persistent storage for VMs.
+```
 11. azurerm_snapshot
 12. azurerm_backup_protected_vm
 13. azurerm_storage_blob
