@@ -1,0 +1,30 @@
+name: 'Terraform Deploy'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    name: 'Deploy Infrastructure'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Plan
+      run: terraform plan -var-file="env.tfvars"
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve -var-file="env.tfvars"
+
+    - name: Show Generated Admin Password
+      run: terraform output admin_password
