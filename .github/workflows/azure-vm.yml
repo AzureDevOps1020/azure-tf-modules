@@ -26,8 +26,8 @@ jobs:
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
 
-    - name: Change directory to terraform code
-      run: cd azure-virtual-machine
+    # - name: Change directory to terraform code
+    #   run: cd azure-virtual-machine
 
     - name: Terraform Init
       run: terraform init
