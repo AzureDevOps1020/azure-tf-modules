@@ -905,3 +905,120 @@
 
 300. **azurerm_sql_server_data_restore**  
 *Description:* Data Restore handles the restoration of SQL Server databases from backup, including point-in-time recovery and disaster recovery scenarios.
+
+301. **azurerm_management_group**  
+*Description:* Management Groups help organize and manage access to Azure subscriptions, applying policies and compliance controls across multiple subscriptions.
+
+302. **azurerm_policy_assignment**  
+*Description:* Policy Assignments apply Azure Policy definitions to Azure resources, enforcing organizational policies and compliance requirements.
+
+303. **azurerm_policy_definition**  
+*Description:* Policy Definitions create and define Azure policies, specifying rules and actions for resource compliance and governance.
+
+304. **azurerm_policy_set_definition**  
+*Description:* Policy Set Definitions group multiple Azure Policy definitions into a single policy set, allowing for more comprehensive governance.
+
+305. **azurerm_role_assignment**  
+*Description:* Role Assignments assign Azure roles to users, groups, or applications, managing access and permissions to Azure resources.
+
+306. **azurerm_role_definition**  
+*Description:* Role Definitions define custom Azure roles with specific permissions, allowing for granular access control across resources.
+
+307. **azurerm_subscription**  
+*Description:* Subscriptions represent an Azure account's billing and management scope, providing a way to organize and manage Azure resources and services.
+
+308. **azurerm_subscription_policy_assignment**  
+*Description:* Subscription Policy Assignments apply policies to Azure subscriptions, ensuring compliance and governance at the subscription level.
+
+309. **azurerm_data_protection_backup_instance**  
+*Description:* Backup Instances manage backup operations for data protection, including configuration and monitoring of backup activities.
+
+310. **azurerm_data_protection_backup_policy**  
+*Description:* Backup Policies configure automated backup schedules and retention for data protection, ensuring data availability and recovery.
+
+311. **azurerm_data_protection_vault**  
+*Description:* Data Protection Vaults store and manage backup data, providing secure storage and access for backup and recovery operations.
+
+312. **azurerm_database_migration_service**  
+*Description:* Database Migration Service (DMS) facilitates the migration of databases from on-premises or other cloud environments to Azure.
+
+313. **azurerm_database_migration_project**  
+*Description:* Migration Projects organize and manage the database migration process, including assessment, migration, and testing.
+
+314. **azurerm_database_migration_task**  
+*Description:* Migration Tasks manage specific migration activities within a DMS project, including schema and data migration.
+
+315. **azurerm_digital_twins_instance**  
+*Description:* Digital Twins Instances represent virtual models of physical environments, enabling the creation and management of digital replicas of real-world systems.
+
+316. **azurerm_digital_twins_endpoint_eventhub**  
+*Description:* Event Hub Endpoints connect Digital Twins Instances to Azure Event Hubs, enabling the ingestion and processing of events and telemetry data.
+
+317. **azurerm_digital_twins_endpoint_servicebus**  
+*Description:* Service Bus Endpoints connect Digital Twins Instances to Azure Service Bus, facilitating messaging and event-driven architecture.
+
+318. **azurerm_digital_twins_endpoint_eventgrid**  
+*Description:* Event Grid Endpoints connect Digital Twins Instances to Azure Event Grid, enabling event-based communication and integration.
+
+319. **azurerm_frontdoor**  
+*Description:* Azure Front Door provides global HTTP/HTTPS load balancing and application acceleration, improving performance and availability for web applications.
+
+320. **azurerm_frontdoor_custom_https_configuration**  
+*Description:* Custom HTTPS Configurations manage SSL/TLS certificates and secure HTTPS connections for Azure Front Door, enhancing security and trust.
+
+321. **azurerm_frontdoor_firewall_policy**  
+*Description:* Firewall Policies define and enforce security rules for Azure Front Door, protecting web applications from malicious traffic and attacks.
+
+322. **azurerm_lb_rule**  
+*Description:* Load Balancer Rules configure load balancing and traffic distribution for Azure Load Balancers, managing how traffic is routed to backend resources.
+
+323. **azurerm_managed_disk_encryption_set**  
+*Description:* Encryption Sets manage disk encryption settings for Azure Managed Disks, ensuring data security through encryption at rest.
+
+324. **azurerm_media_service_account**  
+*Description:* Media Service Accounts manage Azure Media Services resources, including video encoding, streaming, and analytics.
+
+325. **azurerm_maintenance_assignment_dedicated_host**  
+*Description:* Maintenance Assignments manage maintenance schedules and operations for dedicated hosts, ensuring minimal disruption during updates.
+
+326. **azurerm_maintenance_configuration**  
+*Description:* Maintenance Configurations define maintenance windows and schedules for Azure resources, managing updates and maintenance activities.
+
+327. **azurerm_monitor_metric_alert**  
+*Description:* Metric Alerts monitor and trigger notifications based on metrics and performance thresholds, providing insights into resource health and performance.
+
+328. **azurerm_monitor_private_link_scope**  
+*Description:* Private Link Scopes manage the configuration of private endpoints for Azure Monitor, enabling secure access to monitoring data.
+
+329. **azurerm_monitor_scheduled_query_rules_alert**  
+*Description:* Scheduled Query Rules Alerts configure alerts based on scheduled queries in Azure Monitor, providing notifications for specific conditions or anomalies.
+
+330. **azurerm_automation_variable**  
+*Description:* Automation Variables define and manage variables used in Azure Automation runbooks, providing flexible and dynamic configuration options.
+
+331. **azurerm_container_group_diagnostics**  
+*Description:* Container Group Diagnostics enable monitoring and logging for container groups in Azure, providing insights into container performance and health.
+
+332. **azurerm_container_registry_scope_map**  
+*Description:* Scope Maps manage access control and permissions for Azure Container Registries, enabling fine-grained access to container images and repositories.
+
+333. **azurerm_container_registry_token**  
+*Description:* Container Registry Tokens provide authentication and access control for Azure Container Registries, facilitating secure operations with container images.
+
+334. **azurerm_container_registry_webhook**  
+*Description:* Webhooks configure notifications and triggers for events in Azure Container Registries, enabling automated workflows and integrations.
+
+335. **azurerm_cosmosdb_sql_stored_procedure**  
+*Description:* Stored Procedures define and execute custom server-side logic in Azure Cosmos DB SQL API, enhancing data processing and management capabilities.
+
+336. **azurerm_cosmosdb_sql_trigger**  
+*Description:* Triggers define and execute custom logic based on data changes in Azure Cosmos DB SQL API, enabling event-driven processing and automation.
+
+337. **azurerm_cosmosdb_sql_user_defined_function**  
+*Description:* User-Defined Functions (UDFs) provide custom functions for querying and manipulating data in Azure Cosmos DB SQL API, extending query capabilities.
+
+338. **azurerm_cognitive_services_account**  
+*Description:* Cognitive Services Accounts manage access to Azure Cognitive Services APIs, enabling integration of AI capabilities like vision, speech, and language understanding.
+
+339. **azurerm_sentinel_alert_rule_scheduled**  
+*Description:* Scheduled Alert Rules configure alerts in Azure Sentinel based on scheduled queries, providing notifications for potential security threats.
