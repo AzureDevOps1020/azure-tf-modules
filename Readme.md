@@ -3,6 +3,9 @@
 ## Here is a list of Azure resources for which you can create Terraform modules:
 
 1. azurerm_resource_group
+```
+Description: A resource group is a container that holds related Azure resources for an Azure solution. It is a logical grouping for resources in Azure.
+```
 2. azurerm_virtual_network
 3. azurerm_subnet
 4. azurerm_network_security_group
