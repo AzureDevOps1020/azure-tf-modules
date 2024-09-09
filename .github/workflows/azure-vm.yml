@@ -43,19 +43,25 @@ jobs:
       run: terraform init
 
     # Conditional step to either apply or destroy resources
-    - name: Terraform Plan or Destroy
+    - name: Terraform Plan
       run: |
-        if [[ "${{ github.event.inputs.destroy }}" == "true" ]]; then
+        if [ "${{ github.event.inputs.destroy }}" = "true" ]; then
+          echo "Planning destroy"
           terraform plan -destroy -var-file="env-${{ github.event.inputs.environment }}.tfvars"
         else
+          echo "Planning apply"
           terraform plan -var-file="env-${{ github.event.inputs.environment }}.tfvars"
-    
+        fi
+
     - name: Terraform Apply or Destroy
       run: |
-        if [[ "${{ github.event.inputs.destroy }}" == "true" ]]; then
+        if [ "${{ github.event.inputs.destroy }}" = "true" ]; then
+          echo "Destroying infrastructure"
           terraform destroy -auto-approve -var-file="env-${{ github.event.inputs.environment }}.tfvars"
         else
+          echo "Applying infrastructure"
           terraform apply -auto-approve -var-file="env-${{ github.event.inputs.environment }}.tfvars"
+        fi
 
     # Show generated admin password output securely
     - name: Show Generated Admin Password
